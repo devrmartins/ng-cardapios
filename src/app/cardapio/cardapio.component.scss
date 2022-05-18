@@ -1,0 +1,40 @@
+@import '../styles/tema.scss';
+
+.cardapio {
+  box-shadow: 0 5px 12px #e0e0e0;
+  transition: all .5s;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+  }
+
+  img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+  }
+  .cardapio-info {
+    background-color: #fff;
+    padding: 10px;
+
+    h5 {
+      white-space: wrap;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-weight: 300;
+      &.cidade {
+        font-size: 14px;
+        color: #6D6D6D;
+      }
+      &.telefone {
+        margin-top: 15px;
+        color: map-get($cores, 'primary');
+        font-weight: 700;
+      }
+    }
+  }
+}
