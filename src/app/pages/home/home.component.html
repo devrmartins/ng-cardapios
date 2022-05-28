@@ -1,3 +1,11 @@
 <div class="page">
-  <app-lista-cardapios></app-lista-cardapios>
+  <app-lista-cardapios
+    titulo="Destaques"
+    [cardapios]="cardapios">
+  </app-lista-cardapios>
+
+  <app-lista-cardapios
+    titulo="Novidades"
+    [cardapios]="cardapiosNovidades">
+  </app-lista-cardapios>
 </div>

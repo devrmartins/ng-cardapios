@@ -6,11 +6,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./cardapio.component.scss']
 })
 export class CardapioComponent implements OnInit {
-  @Input() imagem = "https://espetinhodesucesso.com.br/wp-content/uploads/2022/01/Como-identificar-a-carne-que-parece-picanha.jpg"
-  @Input() titulo = "Picanha Gourmet ao Molho Italiano"
-  @Input() endereco = "Rua fulano de tal"
-  @Input() cidade = "João Pessoa - PB"
-  @Input() telefone = "(83) 9 99999-9999"
+  @Input() imagem: string | undefined = "https://espetinhodesucesso.com.br/wp-content/uploads/2022/01/Como-identificar-a-carne-que-parece-picanha.jpg"
+  @Input() titulo: string | undefined = "Picanha Gourmet ao Molho Italiano"
+  @Input() endereco: string | undefined = "Rua fulano de tal"
+  @Input() cidade: string | undefined = "João Pessoa - PB"
+  @Input() telefone: string | undefined = "(83) 9 99999-9999"
 
   constructor() { }
 

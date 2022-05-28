@@ -1,3 +1,13 @@
 <div class="lista">
-  <app-cardapio></app-cardapio>
+  <h1 class="titulo">{{ titulo }}</h1>
+  <div class="cardapios">
+    <app-cardapio
+      *ngFor="let cardapio of cardapios"
+      [imagem]="cardapio.imagem"
+      [titulo]="cardapio.titulo"
+      [endereco]="cardapio.endereco"
+      [cidade]="cardapio.cidade"
+      [telefone]="cardapio.telefone"
+    ></app-cardapio>
+  </div>
 </div>
