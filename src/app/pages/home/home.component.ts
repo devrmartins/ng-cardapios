@@ -15,8 +15,10 @@ export class HomeComponent implements OnInit {
   constructor(private cardapioService: CardapioService) { }
 
   ngOnInit(): void {
-    this.cardapios = this.cardapioService.listar();
-    this.cardapiosNovidades = this.cardapioService.listar();
+    this.cardapioService.listar().subscribe(response => {
+      this.cardapios = response.cardapios.filter(c => c.destaque);
+      this.cardapiosNovidades = response.cardapios.filter(c => c.novidade);
+    })
   }
 
 }
