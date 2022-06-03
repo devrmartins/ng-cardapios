@@ -13,4 +13,8 @@ export class ListaCardapiosComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  abrirCardapio(cardapio: Cardapio) {
+    console.log(cardapio);
+  }
 }

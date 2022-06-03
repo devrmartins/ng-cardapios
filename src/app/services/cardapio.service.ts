@@ -1,3 +1,5 @@
+import { Cardapio } from './../models/cardapio';
+import { ListarItensCardapiosDTO } from './../models/listar-itens-cardapios.dto';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -13,6 +15,10 @@ export class CardapioService {
 
   listar(): Observable<ListarCardapiosDTO> {
     return this.http.get<ListarCardapiosDTO>(`${environment.apiUrl}/${environment.listarCardapios}`);
+  }
+
+  listarItens(cardapio: Cardapio): Observable<ListarItensCardapiosDTO> {
+    return this.http.get<ListarItensCardapiosDTO>(`${environment.apiUrl}/cardapios/${cardapio.id}/itens`);
   }
 
 }

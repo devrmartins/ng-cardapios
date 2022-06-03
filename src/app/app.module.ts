@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { CardapioComponent } from './cardapio/cardapio.component';
 import { ListaCardapiosComponent } from './lista-cardapios/lista-cardapios.component';
 import { HomeComponent } from './pages/home/home.component';
+import { CardapiosComponent } from './pages/cardapios/cardapios.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HomeComponent } from './pages/home/home.component';
     HeaderComponent,
     CardapioComponent,
     ListaCardapiosComponent,
-    HomeComponent
+    HomeComponent,
+    CardapiosComponent
   ],
   imports: [
     BrowserModule,

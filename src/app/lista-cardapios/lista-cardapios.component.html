@@ -3,6 +3,7 @@
   <div class="cardapios">
     <app-cardapio
       *ngFor="let cardapio of cardapios"
+      (click)="abrirCardapio(cardapio)"
       [imagem]="cardapio.imagem"
       [titulo]="cardapio.titulo"
       [endereco]="cardapio.endereco"
