@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   cardapios: Cardapio[] = [];
   cardapiosNovidades: Cardapio[] = [];
 
-  constructor(private cardapioService: CardapioService) { }
+  constructor(private cardapioService: CardapioService) {}
 
   ngOnInit(): void {
     this.cardapioService.listar().subscribe(response => {

@@ -1,5 +1,5 @@
 <div class="lista">
-  <h1 class="titulo">{{ titulo }}</h1>
+  <app-titulo [titulo]="titulo"></app-titulo>
   <div class="cardapios">
     <app-cardapio
       *ngFor="let cardapio of cardapios"

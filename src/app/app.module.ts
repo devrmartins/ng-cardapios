@@ -9,6 +9,8 @@ import { CardapioComponent } from './cardapio/cardapio.component';
 import { ListaCardapiosComponent } from './lista-cardapios/lista-cardapios.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CardapiosComponent } from './pages/cardapios/cardapios.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { TituloComponent } from './titulo/titulo.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { CardapiosComponent } from './pages/cardapios/cardapios.component';
     CardapioComponent,
     ListaCardapiosComponent,
     HomeComponent,
-    CardapiosComponent
+    CardapiosComponent,
+    NotFoundComponent,
+    TituloComponent
   ],
   imports: [
     BrowserModule,

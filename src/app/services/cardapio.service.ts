@@ -17,8 +17,8 @@ export class CardapioService {
     return this.http.get<ListarCardapiosDTO>(`${environment.apiUrl}/${environment.listarCardapios}`);
   }
 
-  listarItens(cardapio: Cardapio): Observable<ListarItensCardapiosDTO> {
-    return this.http.get<ListarItensCardapiosDTO>(`${environment.apiUrl}/cardapios/${cardapio.id}/itens`);
+  listarItens(id: string): Observable<ListarItensCardapiosDTO> {
+    return this.http.get<ListarItensCardapiosDTO>(`${environment.apiUrl}/cardapios/${id}/itens`);
   }
 
 }
