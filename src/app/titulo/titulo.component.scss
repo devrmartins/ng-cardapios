@@ -1,6 +1,20 @@
+@import "../styles/tema.scss";
+
 .titulo {
   text-transform: uppercase;
   font-weight: bold;
   margin-top: 1rem;
   margin-bottom: 1rem;
+
+  &.grande {
+    font-size: 48px;
+  }
+
+  &.medio {
+    font-size: 28px;
+  }
+
+  &.pequeno {
+    font-size: 20px;
+  }
 }

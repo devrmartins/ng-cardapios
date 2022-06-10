@@ -1,0 +1,47 @@
+@import '../styles/tema.scss';
+
+.item {
+  display: flex;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 12px #e0e0e0;
+
+  img {
+    border-radius:  10px 0 0 10px;
+    width: 240px;
+  }
+
+  .container {
+    padding: 15px;
+
+    .topo {
+
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      app-titulo {
+        flex: 1;
+      }
+
+      .promocao {
+        @include destaque
+      }
+    }
+
+
+    .descricao {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      line-height: 20px;
+      color: map-get($cores, 'gray300');
+    }
+
+    .valor {
+      font-family: 'Roboto Condensed';
+      font-weight: bold;
+      font-size: 28px;
+      margin-top: 30px;
+    }
+  }
+}

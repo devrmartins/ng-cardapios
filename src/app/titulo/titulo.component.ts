@@ -6,11 +6,16 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./titulo.component.scss']
 })
 export class TituloComponent implements OnInit {
-  @Input() titulo?: string = "";
+  @Input() titulo: string = "";
+  @Input() tamanho: string = "medio";
+
+  public tamanhoDefinido: string = "medio";
+  private tamanhos = ['pequeno', 'medio', 'grande'];
 
   constructor() { }
 
   ngOnInit(): void {
+    this.tamanhoDefinido = this.tamanhos.includes(this.tamanho) ? this.tamanho : 'medio';
   }
 
 }

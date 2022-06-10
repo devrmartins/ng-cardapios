@@ -1,1 +1,9 @@
-$cores: ('primary': #FF7A00, 'gray100': #F2F2F4);
+$cores: ('primary': #FF7A00, 'gray100': #F2F2F4, 'gray300': #898989);
+
+@mixin destaque {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: map-get($cores, 'primary');
+  text-transform: uppercase;
+}

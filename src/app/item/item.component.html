@@ -1,0 +1,13 @@
+<div class="item">
+  <img [src]="item?.imagem" alt="">
+  <div class="container">
+    <div class="topo">
+      <app-titulo [titulo]="item?.titulo || ''" tamanho="pequeno"></app-titulo>
+      <div *ngIf="item.promocao" class="promocao">
+        <fa-icon [icon]="faStar"></fa-icon> Promoção
+      </div>
+    </div>
+    <p class="descricao">{{ item?.descricao }}</p>
+    <p class="valor">R$ {{ item?.valor }}</p>
+  </div>
+</div>

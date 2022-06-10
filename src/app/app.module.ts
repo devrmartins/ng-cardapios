@@ -11,6 +11,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { CardapiosComponent } from './pages/cardapios/cardapios.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { TituloComponent } from './titulo/titulo.component';
+import { ItemComponent } from './item/item.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { TituloComponent } from './titulo/titulo.component';
     HomeComponent,
     CardapiosComponent,
     NotFoundComponent,
-    TituloComponent
+    TituloComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

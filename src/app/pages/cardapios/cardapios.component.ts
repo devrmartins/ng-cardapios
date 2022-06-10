@@ -25,7 +25,14 @@ export class CardapiosComponent implements OnInit {
         id: response.id,
         titulo: response.titulo
       }
-      this.itens = response.itens;
+      const itens = response.itens.map((item, index) => {
+        if (index === 0) {
+          item.promocao = true;
+        }
+        item.descricao = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dolor neque, ultrices ac odio vel, finibus pellentesque libero. Etiam aliquam dolor a diam porttitor tempus. Nunc sit amet urna eros. Cras eleifend semper orci, eget semper nisi vestibulum at. Integer consequat dui eu sollicitudin ultricies. Ut lacus quam, iaculis in urna vel, facilisis ultricies quam. Curabitur at orci laoreet, fermentum tortor in, blandit urna. Integer fringilla eu mauris vel aliquam.'
+        return item
+      })
+      this.itens = itens;
     })
   }
 

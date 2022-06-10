@@ -1,13 +1,6 @@
 <div class="page">
-  <app-titulo [titulo]="cardapio?.titulo"></app-titulo>
+  <app-titulo [titulo]="cardapio?.titulo || ''"></app-titulo>
   <div class="itens">
-    <div *ngFor="let item of itens" class="item">
-      <img [src]="item.imagem" alt="">
-      <div class="descricao">
-        <h5>{{ item.titulo }}</h5>
-        <p>{{ item.descricao }}</p>
-        <p>R$ {{ item.valor }}</p>
-      </div>
-    </div>
+    <app-item *ngFor="let item of itens" [item]="item"></app-item>
   </div>
 </div>
