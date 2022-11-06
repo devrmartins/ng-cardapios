@@ -1,0 +1,7 @@
+<div class="cardapios">
+  <app-cardapio
+    *ngFor="let cardapio of cardapios"
+    [cardapio]="cardapio">
+  </app-cardapio>
+</div>
+<button (click)="filtrar()" type="button">Filtrar</button>

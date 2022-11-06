@@ -1,0 +1,28 @@
+.cardapio {
+
+  background: #fff;
+
+  img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .descricao {
+    padding: 10px 15px;
+
+    h5 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .telefone {
+      font-weight: 700;
+      margin-top: 20px;
+      color: var(--primary);
+    }
+
+  }
+}
