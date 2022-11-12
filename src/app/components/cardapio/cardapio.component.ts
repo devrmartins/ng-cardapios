@@ -1,5 +1,5 @@
 import { CardapioService } from './../../services/cardapio.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { Cardapio } from '../../models/cardapio';
 
 @Component({
@@ -11,6 +11,8 @@ export class CardapioComponent implements OnInit {
 
   @Input() cardapio?: Cardapio;
 
+  @Output('onRemove') removeEmitter: EventEmitter<Cardapio> = new EventEmitter();
+
   constructor(private cardapioService: CardapioService) { }
 
   ngOnInit(): void {
@@ -21,7 +23,11 @@ export class CardapioComponent implements OnInit {
     if (this.cardapio != null) {
       this.cardapioService
       .removerCardapio(this.cardapio.id)
-      .subscribe();
+      .subscribe(() => {
+        this.removeEmitter.emit(this.cardapio);
+      }, error => {
+        alert("Ops! não foi possível remover.");
+      });
     }
   }
 

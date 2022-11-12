@@ -30,4 +30,14 @@ export class ListaCardapiosComponent implements OnInit {
     }
   }
 
+  handleRemover(cardapio: Cardapio) {
+    console.log("Handle Remover", cardapio);
+    const novosCardapios = [...this.cardapios];
+    const indexCardapio = novosCardapios.findIndex(c => c.id === cardapio.id);
+    if (indexCardapio) {
+      novosCardapios.splice(indexCardapio, 1);
+      this.cardapios = novosCardapios;
+    }
+  }
+
 }
