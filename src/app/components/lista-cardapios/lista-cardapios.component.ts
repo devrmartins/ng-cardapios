@@ -14,7 +14,11 @@ export class ListaCardapiosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cardapios = this.cardapioService.getCardapios();
+    this.cardapioService
+    .getCardapios()
+    .subscribe(resposta => {
+      this.cardapios = resposta.cardapios;
+    });
   }
 
   filtrar() {
@@ -22,7 +26,7 @@ export class ListaCardapiosComponent implements OnInit {
     if (this.filtrado) {
       this.cardapios = this.cardapioService.getCardapiosDestacados();
     } else {
-      this.cardapios = this.cardapioService.getCardapios();
+      //this.cardapios = this.cardapioService.getCardapios();
     }
   }
 

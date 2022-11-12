@@ -16,4 +16,13 @@ export class CardapioComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  remover() {
+    console.log("Remover", this.cardapio);
+    if (this.cardapio != null) {
+      this.cardapioService
+      .removerCardapio(this.cardapio.id)
+      .subscribe();
+    }
+  }
+
 }

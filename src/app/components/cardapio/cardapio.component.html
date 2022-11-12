@@ -2,7 +2,11 @@
   <img [src]="cardapio?.imagem" alt="">
   <div class="descricao">
     <h5>{{ cardapio?.titulo }}</h5>
-    <p>{{ cardapio?.descricao }}</p>
+    <p>{{ cardapio?.endereco }} {{ cardapio?.cidade }}</p>
     <p class="telefone">{{ cardapio?.telefone }}</p>
+    <button
+      type="button"
+      class="btnRemover"
+      (click)="remover()">Remover</button>
   </div>
 </div>

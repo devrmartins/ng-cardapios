@@ -1,7 +1,9 @@
 export interface Cardapio {
+  id: number;
   imagem: string;
   titulo: string;
-  descricao: string;
+  endereco: string;
+  cidade: string;
   telefone: string;
   destaques: boolean;
 }
