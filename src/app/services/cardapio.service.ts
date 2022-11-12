@@ -19,7 +19,6 @@ export class CardapioService {
   }
 
   removerCardapio(id: number) {
-    console.log("Remover", id)
     return this.http.delete(`${environment.apiUrl}/cardapios/${id}`);
   }
 

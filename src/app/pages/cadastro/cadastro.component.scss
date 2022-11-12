@@ -1,0 +1,47 @@
+.container {
+  padding: 15px 30px;
+
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  .campo {
+    margin-bottom: 30px;
+
+    label, input {
+      display: block;
+    }
+
+    label {
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      font-size: 32px;
+    }
+
+  }
+
+  .checkboxes {
+    display: flex;
+    gap: 30px;
+
+    .checkbox {
+      label {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .acoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+}
