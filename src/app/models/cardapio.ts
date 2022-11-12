@@ -5,5 +5,6 @@ export interface Cardapio {
   endereco: string;
   cidade: string;
   telefone: string;
-  destaques: boolean;
+  destaque: boolean;
+  novidade: boolean;
 }

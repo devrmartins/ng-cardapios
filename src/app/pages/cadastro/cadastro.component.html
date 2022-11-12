@@ -4,9 +4,9 @@
     <div class="campo">
       <label for="titulo">Título</label>
       <input type="text" id="titulo" formControlName="titulo">
-      <p *ngIf="!titulo?.valid && (titulo?.dirty || titulo?.touched)" class="error">
+      <!-- <p *ngIf="!titulo?.valid && (titulo?.dirty || titulo?.touched)" class="error">
         Campo obrigatório
-      </p>
+      </p> -->
     </div>
     <div class="campo">
       <label for="imagem">Imagem</label>
@@ -15,23 +15,23 @@
     </div>
     <div class="campo">
       <label for="endereco">Endereço</label>
-      <input type="text" id="endereco">
+      <input type="text" id="endereco" formControlName="endereco">
     </div>
     <div class="campo">
       <label for="cidade">Cidade</label>
-      <input type="text" id="cidade">
+      <input type="text" id="cidade" formControlName="cidade">
     </div>
     <div class="campo">
       <label for="telefone">Telefone</label>
-      <input type="text" id="telefone">
+      <input type="text" id="telefone" formControlName="telefone">
     </div>
     <div class="checkboxes">
       <div class="checkbox">
-        <input type="checkbox" id="destaques" />
+        <input type="checkbox" id="destaques" formControlName="destaques" />
         <label for="destaques">Destaques</label>
       </div>
       <div class="checkbox">
-        <input type="checkbox" id="novidades" />
+        <input type="checkbox" id="novidades" formControlName="novidades" />
         <label for="novidades">Novidades</label>
       </div>
     </div>

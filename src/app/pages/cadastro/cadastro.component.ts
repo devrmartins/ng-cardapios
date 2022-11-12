@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { CardapioService } from './../../services/cardapio.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -10,7 +12,11 @@ export class CadastroComponent implements OnInit {
 
   cardapioForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private cardapioService: CardapioService,
+    private router: Router
+  ) {
     this.cardapioForm = this.fb.group({
       titulo: ['', [Validators.required]],
       imagem: [''],
@@ -38,8 +44,17 @@ export class CadastroComponent implements OnInit {
   }
 
   salvar() {
-    console.log(this.cardapioForm.valid);
-    console.log(this.cardapioForm.value);
+    if (this.cardapioForm.valid) {
+      this.cardapioService
+      .cadastrarCardapio(this.cardapioForm.value)
+      .subscribe(() => {
+        this.router.navigate([""]);
+      }, error => {
+        alert("Não foi possível realizar o cadastro.");
+      });
+    } else {
+      alert("Verifique os campos obrigatórios!");
+    }
   }
 
 }

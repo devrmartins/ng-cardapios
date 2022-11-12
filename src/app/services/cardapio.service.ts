@@ -18,13 +18,18 @@ export class CardapioService {
     return this.http.get<CardapiosDTO>(environment.apiUrl + "/cardapios");
   }
 
+  cadastrarCardapio(cardapio: Cardapio) {
+    return this.http
+    .post(environment.apiUrl + "/cardapios", cardapio);
+  }
+
   removerCardapio(id: number) {
     return this.http.delete(`${environment.apiUrl}/cardapios/${id}`);
   }
 
   getCardapiosDestacados() {
     let lista = [...this.cardapios];
-    return lista.filter(f => f.destaques);
+    return lista.filter(f => f.destaque);
   }
 
 }

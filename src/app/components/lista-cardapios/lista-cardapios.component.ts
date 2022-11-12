@@ -10,6 +10,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ListaCardapiosComponent implements OnInit {
   cardapios: Cardapio[] = []
   filtrado: boolean = false;
+
+  @Input() tipo: string = "";
+
   constructor(private cardapioService: CardapioService) {
   }
 
@@ -17,7 +20,13 @@ export class ListaCardapiosComponent implements OnInit {
     this.cardapioService
     .getCardapios()
     .subscribe(resposta => {
-      this.cardapios = resposta.cardapios;
+      const novosCardapios = [...resposta.cardapios]
+      if (this.tipo === "destaques") {
+        novosCardapios.filter(c => c.destaque)
+      } else if (this.tipo === "novidades") {
+        novosCardapios.filter(c => c.novidade)
+      }
+      this.cardapios = novosCardapios;
     });
   }
 
