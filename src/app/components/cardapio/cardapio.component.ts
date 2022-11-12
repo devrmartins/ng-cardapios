@@ -24,7 +24,9 @@ export class CardapioComponent implements OnInit {
       this.cardapioService
       .removerCardapio(this.cardapio.id)
       .subscribe(() => {
-        this.removeEmitter.emit(this.cardapio);
+        this.cardapioService.cardapios$.next(
+          this.cardapioService.cardapios$.value.filter(c => c.id !== this.cardapio?.id)
+        )
       }, error => {
         alert("Ops! não foi possível remover.");
       });

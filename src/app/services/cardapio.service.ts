@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Cardapio } from '../models/cardapio';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { CardapiosDTO } from '../models/cardapiosDTO';
 
@@ -10,7 +10,7 @@ import { CardapiosDTO } from '../models/cardapiosDTO';
 })
 export class CardapioService {
 
-  cardapios: Cardapio[] = [];
+  public cardapios$: BehaviorSubject<Cardapio[]> = new BehaviorSubject<Cardapio[]>([]);
 
   constructor(private http: HttpClient) { }
 
@@ -19,12 +19,11 @@ export class CardapioService {
   }
 
   removerCardapio(id: number) {
-    console.log("Remover", id)
     return this.http.delete(`${environment.apiUrl}/cardapios/${id}`);
   }
 
   getCardapiosDestacados() {
-    let lista = [...this.cardapios];
+    let lista = [...this.cardapios$.value];
     return lista.filter(f => f.destaques);
   }
 

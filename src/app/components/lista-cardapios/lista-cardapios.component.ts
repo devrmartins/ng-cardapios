@@ -14,10 +14,14 @@ export class ListaCardapiosComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.cardapioService.cardapios$
+    .subscribe(cardapios => this.cardapios = cardapios)
+
     this.cardapioService
     .getCardapios()
     .subscribe(resposta => {
-      this.cardapios = resposta.cardapios;
+      this.cardapioService.cardapios$.next(resposta.cardapios);
     });
   }
 
@@ -32,12 +36,12 @@ export class ListaCardapiosComponent implements OnInit {
 
   handleRemover(cardapio: Cardapio) {
     console.log("Handle Remover", cardapio);
-    const novosCardapios = [...this.cardapios];
-    const indexCardapio = novosCardapios.findIndex(c => c.id === cardapio.id);
-    if (indexCardapio) {
-      novosCardapios.splice(indexCardapio, 1);
-      this.cardapios = novosCardapios;
-    }
+    // const novosCardapios = [...this.cardapios];
+    // const indexCardapio = novosCardapios.findIndex(c => c.id === cardapio.id);
+    // if (indexCardapio) {
+    //   novosCardapios.splice(indexCardapio, 1);
+    //   this.cardapios = novosCardapios;
+    // }
   }
 
 }
